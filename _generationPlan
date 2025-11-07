@@ -1,0 +1,109 @@
+{
+  "componentsToGenerate": [
+    "Navigation",
+    "Hero",
+    "ProductFeatures",
+    "UseCases",
+    "Testimonials",
+    "IntegrationPartners",
+    "PricingPreview",
+    "TrialSignupForm",
+    "Footer",
+    "AboutHero",
+    "FounderStories",
+    "TeamSection",
+    "CompanyTimeline",
+    "ServicesHero",
+    "FeatureShowcase",
+    "ApiDocumentation",
+    "ContactForm",
+    "PricingTable",
+    "PricingComparison",
+    "BlogGrid",
+    "BlogPost",
+    "NewsletterSignup"
+  ],
+  "estimatedChallenges": [
+    {
+      "component": "Navigation",
+      "challenge": "Active page state and smooth mobile menu transitions",
+      "mitigation": "Use Next.js usePathname hook for active states, CSS transitions for mobile menu"
+    },
+    {
+      "component": "Hero",
+      "challenge": "Video player integration and autoplay policies",
+      "mitigation": "Use HTML5 video with muted autoplay, fallback poster image"
+    },
+    {
+      "component": "ProductFeatures",
+      "challenge": "Interactive demo animations and state management",
+      "mitigation": "Use React state for active demo, CSS transforms for animations, keep demos simple"
+    },
+    {
+      "component": "Testimonials",
+      "challenge": "Dynamic carousel with smooth transitions",
+      "mitigation": "Use CSS Grid with overflow scroll, snap points for smooth scrolling"
+    },
+    {
+      "component": "TrialSignupForm",
+      "challenge": "Form validation and multi-step flow",
+      "mitigation": "Use controlled inputs with useState, simple validation logic, clear error messages"
+    },
+    {
+      "component": "PricingTable",
+      "challenge": "Complex feature comparison and toggle state",
+      "mitigation": "Use table structure with sticky headers, useState for billing toggle"
+    },
+    {
+      "component": "ContactForm",
+      "challenge": "Dropdown selects and form submission handling",
+      "mitigation": "Use native select elements, preventDefault on submit, show success message"
+    },
+    {
+      "component": "BlogGrid",
+      "challenge": "Dynamic content rendering and filtering",
+      "mitigation": "Use static data array, filter with useState, map with proper keys"
+    },
+    {
+      "component": "Footer",
+      "challenge": "Consistent across all pages with many links",
+      "mitigation": "Use Link components, organize in columns with clear hierarchy"
+    }
+  ],
+  "fixerContext": {
+    "expectedStructure": "Simple Next.js app. Components in components/ folder at root. app/page.tsx imports from ../components/",
+    "importPaths": "Use '../components/ComponentName' from app/page.tsx",
+    "commonIssues": [
+      "Missing 'use client' directive on interactive components (forms, animations, state)",
+      "Import path mismatches - ensure '../components/' prefix from app/ folder",
+      "Video autoplay not working - needs muted and playsInline attributes",
+      "Form submission without preventDefault causing page reload",
+      "Map operations without unique keys causing React warnings",
+      "CSS animations not triggering - check for proper class application",
+      "Gradient backgrounds not rendering - verify CSS syntax",
+      "Link components missing href attribute",
+      "Image components missing alt text for accessibility",
+      "useState not imported from React in interactive components"
+    ],
+    "designSystem": {
+      "colors": "Primary gradient: purple-600 to blue-600 to cyan-500. Accent: green-500. Background: gray-900. Text: white/gray-100",
+      "typography": "Headings: font-bold, large sizes (text-4xl to text-6xl). Body: text-base to text-lg. Code: font-mono",
+      "spacing": "Consistent padding (p-8, p-12, p-16) and gaps (gap-4, gap-8, gap-12)",
+      "components": "Cards with backdrop-blur (glassmorphism), rounded-xl borders, shadow-xl. Buttons with gradient backgrounds, hover:scale-105 transitions"
+    },
+    "interactivity": {
+      "forms": "All forms need 'use client', controlled inputs with useState, validation on submit",
+      "animations": "Use CSS transitions and transforms, avoid complex animation libraries initially",
+      "navigation": "Use Next.js Link component, active states with usePathname",
+      "modals": "Simple show/hide with useState, backdrop with onClick to close"
+    },
+    "contentGuidelines": {
+      "home": "Focus on value proposition, social proof, and trial CTA. Include video, features preview, testimonials, pricing preview",
+      "about": "Humanize the brand with founder stories, team photos, mission statement, company values",
+      "services": "Detailed feature explanations, use cases by industry, API docs preview, integration list",
+      "contact": "Business inquiry form with company details, enterprise sales info, support links",
+      "pricing": "Three clear tiers with feature comparison, annual discount, trial CTA on each tier",
+      "blog": "Mix of product updates, industry insights, customer stories. Include categories and search"
+    }
+  }
+}
